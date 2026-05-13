@@ -1,0 +1,230 @@
+/* =============================================================================
+   Leos Alpenchalet — Colors & Typography
+   Brand Direction: Hybrid A-C
+   Warme, ehrliche Tonalität (A) mit literarischer Typografie (C).
+   ============================================================================= */
+
+/* ---------- Webfonts (loaded from Google Fonts CDN as @fontsource substitute) ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap");
+
+:root {
+  /* ============ COLORS ============ */
+
+  /* Brand */
+  --color-eichen:        #7A5C3C; /* Eichenholz-Warm — Marken-Anker, Logo */
+  --color-eichen-light:  #9C7E5E; /* Eichenholz hell — Italic auf Dunkel */
+  --color-wiese:         #4A5D3A; /* Wiesen-Grün — Eyebrows, Bergbahn */
+  --color-wiese-light:   #6B7B5A; /* Wiesen-Grün hell — Eyebrows auf Dunkel */
+  --color-glut:          #A8C617; /* Logo-Lime — CTA, Italic-Highlight, Akzente */
+  --color-glut-dark:     #8FA912; /* Hover-CTA */
+  --color-logo-green:    #A8C617; /* Alias für Logo-Grün */
+
+  /* Neutrals */
+  --color-altpapier:      #F4EFE6; /* Haupt-Hintergrund */
+  --color-altpapier-warm: #EDE5D6; /* Trust-Strip */
+  --color-weiss:          #FAF8F2; /* Cremeweiß alt. heller BG */
+  --color-laerche:        #2C2620; /* Lärchenrinde — dunkler Anker */
+  --color-laerche-soft:   #3D3528; /* Footer-Hintergrund */
+
+  /* Text */
+  --color-text-primary:    #1F1B17;
+  --color-text-muted:      #5C4A38;
+  --color-text-on-dark:    #F4EFE6;
+  --color-text-on-dark-muted: rgba(244, 239, 230, 0.7);
+
+  /* Borders */
+  --color-border-subtle:      rgba(122, 92, 60, 0.18);
+  --color-border-subtle-dark: rgba(244, 239, 230, 0.15);
+
+  /* Semantic aliases (legacy/utility) */
+  --bg:        var(--color-altpapier);
+  --bg-warm:   var(--color-altpapier-warm);
+  --bg-cream:  var(--color-weiss);
+  --bg-dark:   var(--color-laerche);
+  --fg:        var(--color-text-primary);
+  --fg-muted:  var(--color-text-muted);
+  --fg-on-dark: var(--color-text-on-dark);
+  --accent:    var(--color-glut);
+  --accent-hover: var(--color-glut-dark);
+
+  /* ============ TYPOGRAPHY ============ */
+  --font-heading:     "Marcellus", "Cormorant Garamond", Georgia, serif;
+  --font-italic:      "Marcellus", "Cormorant Garamond", Georgia, serif; /* eine Stimme — Faux-Italic auf Display-Größen ok */
+  --font-body:        "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-handwritten: "Caveat", "Bradley Hand", cursive;
+
+  /* Sizes (fluid where helpful) */
+  --fs-hero:        clamp(3.5rem, 7.5vw, 7rem);
+  --fs-section:     clamp(2.5rem, 5vw, 4rem);
+  --fs-subsection:  clamp(1.6rem, 3vw, 2.2rem);
+  --fs-card:        2rem;
+  --fs-h4:          1.4rem;
+  --fs-body-lg:     1.18rem;
+  --fs-body:        1.05rem;
+  --fs-body-sm:     0.95rem;
+  --fs-meta:        0.85rem;
+  --fs-eyebrow:     0.78rem;
+  --fs-handwritten: 1.5rem;
+  --fs-handwritten-lg: 1.9rem;
+
+  /* Letter-spacing */
+  --ls-hero:    -0.035em;
+  --ls-section: -0.025em;
+  --ls-default: 0;
+  --ls-eyebrow: 0.28em;
+
+  /* Line-height */
+  --lh-hero:    0.95;
+  --lh-heading: 1.05;
+  --lh-body:    1.65;
+
+  /* Weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+
+  /* ============ SPACING ============ */
+  --space-section-y:        7rem;
+  --space-section-y-mobile: 4rem;
+  --space-section-x:        3rem;
+  --space-section-x-mobile: 1.5rem;
+  --container-max:          1400px;
+
+  /* ============ RADIUS ============ */
+  --radius-subtle: 4px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+
+  /* ============ SHADOW ============ */
+  --shadow-hero-image: 0 20px 60px rgba(44, 38, 32, 0.18);
+  --shadow-card:       0 4px 12px rgba(44, 38, 32, 0.15);
+
+  /* ============ ANIMATION ============ */
+  --ease-cta: 0.2s ease;
+  --ease-image: 0.3s ease;
+}
+
+/* ============================================================================
+   SEMANTIC TYPE STYLES — apply directly via class or copy-paste rules
+   ============================================================================ */
+
+.ls-base, body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-primary);
+  background: var(--color-altpapier);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ls-h1, h1 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-hero);
+  line-height: var(--lh-hero);
+  letter-spacing: var(--ls-hero);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.ls-h2, h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-section);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-section);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.ls-h3, h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-subsection);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-section);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.ls-h4, h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  line-height: 1.2;
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.ls-eyebrow {
+  font-family: var(--font-heading);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wiese);
+}
+
+.ls-body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body); color: var(--color-text-muted); }
+.ls-body    { font-size: var(--fs-body);    line-height: var(--lh-body); }
+.ls-body-sm { font-size: var(--fs-body-sm); line-height: var(--lh-body); color: var(--color-text-muted); }
+.ls-meta    { font-size: var(--fs-meta);    color: var(--color-text-muted); }
+
+/* Caveat handwritten — always preceded by an em-dash, never used as a headline */
+.ls-handwritten {
+  font-family: var(--font-handwritten);
+  font-size: var(--fs-handwritten);
+  font-weight: var(--fw-medium);
+  color: var(--color-eichen);
+  line-height: 1.1;
+}
+.ls-handwritten-lg {
+  font-family: var(--font-handwritten);
+  font-size: var(--fs-handwritten-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-eichen);
+  line-height: 1.1;
+}
+
+/* Italic-in-headline accent: wrap the italic word in <em class="ls-italic-accent">
+   Marcellus hat keinen echten Italic-Cut — der Browser-Faux-Italic ist
+   bei Display-Größen (60px+) visuell akzeptabel und hält die Marken-Stimme
+   konsistent. Keine Größen-Kompensation, keine zweite Schriftfamilie. */
+.ls-italic-accent,
+h1 em, h2 em, h3 em {
+  color: var(--color-glut);
+  font-style: italic;
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+/* ============================================================================
+   COMPONENT TOKENS
+   ============================================================================ */
+
+.cta-primary {
+  display: inline-block;
+  background: var(--color-glut);
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-subtle);
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--ease-cta);
+}
+.cta-primary:hover { background: var(--color-glut-dark); }
+
+.cta-ghost {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-eichen);
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-eichen);
+  border-radius: var(--radius-subtle);
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: background var(--ease-cta), color var(--ease-cta);
+}
+.cta-ghost:hover { background: var(--color-eichen); color: var(--color-altpapier); }
